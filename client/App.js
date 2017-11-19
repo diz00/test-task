@@ -5,9 +5,11 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import SuggestPage from "./pages/SuggestPage/SuggestPage";
 import EditPage from "./pages/EditPage/EditPage";
 
+import "./App.css";
+
 export default () => {
   return (
-    <div>
+    <div className="container">
       <Switch>
         <Route exact path="/" component={WelcomePage} />
         <Route exact path="/fb" component={SuggestPage} />

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+
+import "./WelcomePage.css";
 
 class WelcomePage extends Component {
   state = {
@@ -22,11 +25,19 @@ class WelcomePage extends Component {
       <div>
         <h2>Enter a link to the article</h2>
         <input
+          className="link-input"
           type="text"
           value={this.state.url}
           onChange={e => this.setState({ url: e.target.value })}
         />
-        <button onClick={this.fetchArticle}>Fetch article to edit</button>
+        <button className="btn-fetch" onClick={this.fetchArticle}>
+          Fetch article to edit
+        </button>
+        <div className="btn-navigate">
+          <Link className="navigate-link" to="/fb/results">
+            Go to Edit Page
+          </Link>
+        </div>
       </div>
     );
   }
