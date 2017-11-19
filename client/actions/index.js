@@ -1,20 +1,21 @@
+/* eslint-disable */
 import axios from "axios";
 
-import ADD_PARAGRAPHS from "./types";
+import { ADD_ARTICLE } from "./types";
 
-export const addParagraphs = par => {
+export const addArticle = par => {
   return {
-    type: ADD_PARAGRAPHS,
+    type: ADD_ARTICLE,
     payload: par
   };
 };
 
-export const fetchParagraphs = url => {
+export const fetchArticle = url => {
   return dispatch => {
     axios
-      .get(`http://localhost:3000/${url}`)
+      .get(`http://localhost:3000/api/fb?articleURL=${url}`)
       .then(res => {
-        dispatch(addParagraphs(res.data));
+        dispatch(addArticle(res.data));
       })
       .catch(e => {
         console.log("Error occured: ", e);

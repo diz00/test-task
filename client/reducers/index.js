@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import paragraphReducer from "./paragraphReducer";
+import articleReducer from "./articleReducer";
 
 const rootReducer = combineReducers({
-  paragraphs: paragraphReducer
+  article: articleReducer
 });
 export default rootReducer;

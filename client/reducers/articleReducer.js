@@ -1,13 +1,13 @@
-import { ADD_PARAGRAPHS } from "../actions/types";
+import { ADD_ARTICLE } from "../actions/types";
 
 const initialState = {
   title: null,
-  data: []
+  paragraphs: []
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case ADD_PARAGRAPHS:
+    case ADD_ARTICLE:
       return action.payload;
     default:
       return state;

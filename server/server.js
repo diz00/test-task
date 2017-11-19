@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
+const cors = require("cors");
 const apiRoutes = require("./routes/apiRoutes");
 const keys = require("./config/keys");
 
@@ -12,6 +13,7 @@ mongoose.connection.on("error", err => {
 });
 
 const app = express();
+app.use(cors());
 app.use(express.static(path.resolve(__dirname, "../public")));
 
 app.use(bodyParser.json());
