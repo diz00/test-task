@@ -6,14 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/server.js",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack -p"
   },
   "author": "",
   "license": "ISC",
   "nodemonConfig": {
-    "ignore": [
-      "client/*"
-    ]
+    "ignore": ["client/*"]
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -43,6 +42,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "eslint": "^4.11.0",
     "eslint-config-airbnb": "^16.1.0",
