@@ -6,6 +6,7 @@ import store from "./store/store";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import SuggestPage from "./pages/SuggestPage/SuggestPage";
 import EditPage from "./pages/EditPage/EditPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ export default () => {
           <Route exact path="/" component={WelcomePage} />
           <Route exact path="/fb" component={SuggestPage} />
           <Route path="/fb/results" component={EditPage} />
+          <Route component={NotFoundPage} />
         </Switch>
       </div>
     </Provider>

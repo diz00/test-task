@@ -9,15 +9,12 @@
   justify-content: center;
   align-items: center;
   font-size: 16px;
+  text-decoration: none;
+  color: white;
 }
 
 .btn-navigate:hover {
   background-color: #2a569e;
-}
-
-.navigate-link {
-  text-decoration: none;
-  color: white;
 }
 
 .link-input {

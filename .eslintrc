@@ -6,6 +6,10 @@
     "linebreak-style": ["error", "windows"],
     "arrow-body-style": ["off", "never"],
     "react/jsx-filename-extension": ["off", "never"],
+    "no-underscore-dangle": ["off", "never"],
+    "react/forbid-prop-types": ["off", "never"],
+    "no-console": ["off", "never"],
+    "no-alert": ["off", "never"],
     "jsx-a11y/anchor-is-valid": [
       "error",
       {

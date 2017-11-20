@@ -33,11 +33,9 @@ class WelcomePage extends Component {
         <button className="btn-fetch" onClick={this.fetchArticle}>
           Fetch article to edit
         </button>
-        <div className="btn-navigate">
-          <Link className="navigate-link" to="/fb/results">
-            Go to Edit Page
-          </Link>
-        </div>
+        <Link to="/fb/results" className="btn-navigate">
+          Go to Edit Page
+        </Link>
       </div>
     );
   }

@@ -52,10 +52,7 @@ const config = {
       {
         test: /\.jsx?$/,
         loader: "babel-loader",
-        include: [
-          path.resolve("client")
-          //  path.resolve("node_modules/preact-compat/src")
-        ]
+        include: [path.resolve("client")]
       }
     ]
   }

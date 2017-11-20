@@ -1,0 +1,47 @@
+.suggestion-container {
+  display: flex;
+  min-height: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+.suggestion-text {
+  display: inline-flex;
+  flex: 4;
+  padding-right: 15px;
+}
+
+.suggestion-btn-container {
+  display: inline-flex;
+  flex: 1;
+}
+
+.approve-btn {
+  background-color: #56c922;
+  height: 30px;
+  width: 100%;
+  border: none;
+  color: white;
+}
+
+.approve-btn:hover {
+  background-color: #3a8916;
+}
+
+.approve-btn:focus {
+  outline: none;
+}
+
+.approve-btn:active {
+  background-color: #265b0e;
+}
+
+.approved-label {
+  color: black;
+  font-size: 16px;
+  font-family: sans-serif;
+}

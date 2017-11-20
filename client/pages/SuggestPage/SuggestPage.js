@@ -8,18 +8,27 @@ import { fetchArticle } from "../../actions";
 import Card from "./Card/Card";
 
 class SuggestPage extends Component {
+  state = {
+    articleURL: qs.parse(this.props.location.search).articleURL
+  };
+
   componentDidMount() {
-    const parsed = qs.parse(this.props.location.search);
-    if (!parsed.articleURL) {
+    if (!this.state.articleURL) {
       return;
     }
-    this.props.fetchArticle(parsed.articleURL);
+    this.props.fetchArticle(this.state.articleURL);
   }
   render() {
     return (
       <div>
         <h1>{this.props.title}</h1>
-        {this.props.paragraphs.map(p => <Card key={uuidv4()} paragraph={p} />)}
+        {this.props.paragraphs.map(p => (
+          <Card
+            key={uuidv4()}
+            paragraph={p}
+            articleURL={this.state.articleURL}
+          />
+        ))}
       </div>
     );
   }

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+
+import { suggestChanges } from "../../../actions";
 
 import "./Card.css";
 
@@ -8,7 +11,20 @@ class Card extends Component {
     usersVersion: ""
   };
   sendChanges = () => {
-    // use action
+    if (
+      !this.state.usersVersion ||
+      this.state.usersVersion === this.props.paragraph
+    ) {
+      return alert("Please type something to suggest changes");
+    }
+
+    const changes = {
+      articleUrl: this.props.articleURL,
+      originalText: this.props.paragraph,
+      usersText: this.state.usersVersion
+    };
+    this.props.suggestChanges(changes);
+    return this.setState({ usersVersion: "" });
   };
   render() {
     return (
@@ -24,7 +40,7 @@ class Card extends Component {
             rows="4"
           />
         </div>
-        <button className="send-changes-btn">
+        <button onClick={this.sendChanges} className="send-changes-btn">
           <span className="icon">✓</span> SEND CHANGES
         </button>
       </div>
@@ -33,7 +49,9 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-  paragraph: PropTypes.string.isRequired
+  articleURL: PropTypes.string.isRequired,
+  paragraph: PropTypes.string.isRequired,
+  suggestChanges: PropTypes.func.isRequired
 };
 
-export default Card;
+export default connect(null, { suggestChanges })(Card);
